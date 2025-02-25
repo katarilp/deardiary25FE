@@ -54,6 +54,7 @@ const registerUser = async (event) => {
   registerForm.reset(); // tyhjennetään formi
 };
 
+<<<<<<< HEAD
 const loginUser = async (event) => {
   event.preventDefault();
 
@@ -143,3 +144,7 @@ loginForm.addEventListener('submit', loginUser);
 
 const meRequest = document.querySelector('#meRequest');
 meRequest.addEventListener('click', checkUser);
+=======
+const registerForm = document.querySelector('.registerForm');
+registerForm.addEventListener('submit', registerUser);
+>>>>>>> b71a6d9454ee64e55122ea433ddf0a13fe8d527d
