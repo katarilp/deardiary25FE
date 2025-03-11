@@ -14,7 +14,7 @@ const getUsers = async () => {
   const tableBody = document.querySelector('.tbody');
   tableBody.innerHTML = ''; //tyhjennetään taulukko
 
-  // TODO, myöhemmin järkevä erotella omaksi funktiokseen
+ 
   users.forEach((user) => {
     const row = document.createElement('tr');
 
@@ -30,34 +30,14 @@ const getUsers = async () => {
   });
 };
 
-// Get the snackbar DIV
-const snackbar = document.getElementById('snackbar');
-
-// Reusable function to show snackbar message
-const showSnackbar = (message, type = '') => {
-  snackbar.innerText = message;
-  snackbar.className = `show ${type}`.trim(); // Add optional type class (e.g., 'error')
-
-  setTimeout(() => {
-    snackbar.className = snackbar.className.replace('show', '').trim();
-  }, 3000);
-};
-
 const addUser = async (event) => {
   event.preventDefault();
-  // POST
-  //content-type: application/json
+
 
   // Haetaan formista oikea tieto mikä on täytetty .value
   const username = document.querySelector('#username').value.trim();
   const password = document.querySelector('#password').value.trim();
   const email = document.querySelector('#email').value.trim();
-
-  // const bodyData = {
-  //   username: 'Uusi käyttäjä',
-  //   password: 'salakala',
-  //   email: 'newuser@example.com',
-  // };
 
   const bodyData = {
     username: username,

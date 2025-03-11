@@ -1,12 +1,7 @@
-
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  /* color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424; */
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -19,30 +14,21 @@
 * {
   box-sizing: border-box;
 }
-
-body {
-  min-width: 320px;
-  min-height: 100vh;
-  margin: 16px;
+@media screen {
+  body {
+    width: 80%;
+    margin: auto;
+  }
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-h3 {
-  border-bottom: 1px solid rgb(184, 15, 117);
+  font-size: 2.5rem;
+  font-weight: 500;
+  margin: 0;
 }
 
 a {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
 }
 
 #app {
@@ -53,24 +39,52 @@ a:hover {
   color: rgb(0, 0, 0);
 }
 
-main {
-  max-width: 900px;
-  margin: auto;
+nav {
+  background-color: #1b511e;
+  padding: 12px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px ;
+  background-color: #3de813;
+  border-radius: 4px;
+}
+
+main, footer {
+  padding: 0 1rem;
+  background-color: rgba(113, 131, 78, 0.847);
+}
+
+#koirakuva {
+  width: 50%;
+  margin: 0 25%;
 }
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid black;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  /* background-color: #1a1a1a; */
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #101300;
 }
 button:focus,
 button:focus-visible {
@@ -83,10 +97,12 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #d9f13d;
   }
   button {
-    background-color: #f9f9f9;
+    font-family: inherit;
+    background-color: #67c51f;
+    margin: 0.5em;
   }
 }
 
@@ -150,26 +166,88 @@ button.del {
 }
 
 form {
-  background-color:  var(--pink);
-  color: #ffffff;
+  background-color: #7dbc83;
+  margin: 10px 10%;
   padding: 10px;
-  margin-top: 25px;
-  margin-bottom: 25px;
   font-weight: bold;
-  width: 300px;
-  font-size: 0.9em;
+  width: 80%;
   font-family: sans-serif;
 }
 
-input[type=text], input[type=password], input[type=email] {
-  width: 100%;
+input[name=date]  {
+  width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
 }
 
+input[name=score]  {
+  width: 15%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-size: 1em;
+  box-sizing: border-box;
+}
+
+input[name=notes] 
+{
+  width: 100%;
+  height: 20px;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
 pre {
   background-color: aliceblue;
+}
+
+textarea {
+  width: 80%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.card-area {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  min-height: 300px;
+  width: 400px;
+  background-color: #f3f3f3;
+  display: flex;
+  padding: 1em;
+  box-shadow: 11px 8px 19px 0px rgb(2, 2, 2);
+  border-radius: 30px;
+  gap: 20px;
+}
+
+/* vasen */
+.card-img {
+  flex: 1;
+  object-fit: cover;
+}
+
+.card-img img {
+  width: 100px;
+}
+
+.card-diary {
+  flex: 2;
+  width: 40%;
+  margin: 10px
+}
+
+#bgimage {
+  background-image: url('../img/diary.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 300px;
+  height: 400px;
 }
 
 @media screen and (max-width: 800px) {
@@ -177,6 +255,3 @@ pre {
     flex-direction: column;
   }
 }
-
-
-

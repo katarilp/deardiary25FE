@@ -1,0 +1,42 @@
+[
+	{
+		"entry_id": 5,
+		"user_id": 5,
+		"entry_date": "2024-01-14",
+		"anxiety_level": 8,
+		"notes": "tired",
+		"created_at": "2024-01-14T19:00:00"
+	},
+	{
+		"entry_id": 4,
+		"user_id": 4,
+		"entry_date": "2024-01-13",
+		"anxiety_level": 9,
+		"notes": "had a panic attack at work",
+		"created_at": "2024-01-13T18:00:00"
+	},
+	{
+		"entry_id": 3,
+		"user_id": 3,
+		"entry_date": "2024-01-12",
+		"anxiety_level": 6,
+		"notes": "Work was demanding",
+		"created_at": "2024-01-12T22:00:00"
+	},
+	{
+		"entry_id": 2,
+		"user_id": 2,
+		"entry_date": "2024-01-11",
+		"anxiety_level": 2,
+		"notes": "Met with friends, had a good time",
+		"created_at": "2024-01-11T21:00:00"
+	},
+	{
+		"entry_id": 1,
+		"user_id": 1,
+		"entry_date": "2024-01-10",
+		"anxiety_level": 1,
+		"notes": "Had a great workout session",
+		"created_at": "2024-01-10T20:00:00"
+	}
+]
