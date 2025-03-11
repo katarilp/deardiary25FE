@@ -11,7 +11,7 @@ DB
 Lomakkeen kautta saa lisättyä käyttäjiä selaimelle, muttei tietokantaan asti.
 En kerennyt tekemään päiväkirjamerkintää ja niiden noutamista loppuun.
 Taistelin frontin buildaamisen kanssa, mutta en onnistunut.
-Tasitelin frontin Metropolian webdiskille, mutta sehän ei näytä miltään johtuen varmaanki tuosta edellisestä kohdasta.
+Taistelin frontin Metropolian webdiskille, mutta sehän ei näytä miltään johtuen varmaanki tuosta edellisestä kohdasta.
 
 Tietokannassa on taulut users sekä diaryentries. Yhteisenä tekijänä user_id.
 Serverille saa tallennettua käyttäjiä ja päiväkirjamerintöjä, mutta en saanut niitä imettyä fronttin asti.
