@@ -4,27 +4,92 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
+    <title>Ahdistuspäiväkirjat</title>
   </head>
   <body>
-    <nav>
-      <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="./about.html">About</a></li>
-      </ul>
-    </nav>
-    <h2>Index / Kotisivu</h2>
-    <ul>
-      <li>
-        <a href="./src/pages/apitest.html" target="_blank"
-          >Linkki APItesteihin</a
-        >
-      </li>
-      <li>
-        <a href="./src/pages/authtest.html" target="_blank">Linkki Auth</a>
-      </li>
-    </ul>
+    <main>
+      <nav>
+        <ul>
+          <li><a href="./index.html">Etusivu</a></li>
+          <li><a href="./about.html">Merkinnät</a></li>
+          <li><a href="./login.html">Kirjaudu</a></li>
+        </ul>
+      </nav> 
+      <h1>Ahdistuspäiväkirjat</h1>
+      <h2>Tervetuloa!</h2>
+      <p>
+        Tämä on Ahdistuspäiväkirjat-sovellus, joka on tehty osana
+        Metropolia-ammattikorkeakoulun opintoja. Alla voit testata ahdistuksesi kirjaamista päiväkirjaan.
+      </p>
+      <p> 
+        Merkinnät-sivulla voit tarkastella aiempia merkintöjäsi.
+      </p>
+      <img src="/img/ahdistus.jpg" alt="Surullinen koira" id="koirakuva"/>
+     
+      <form class="entryForm">
 
+        <label for="date">Päiväys, jota merkintä koskee: </label>
+        <input
+          id="entry_date"
+          type="date"
+          name="date"
+        />
+      </br>
+        <label for="score">Ahdistuksen määrä päivän aikana (0-10): </label>
+        <input
+          id="anxiety_level"
+          type="number" min="1" max="10"
+          name="score"
+          placeholder="0"
+        />
+      </br>
+        <label for="notes">Muistiinpanot</label>
+        <textarea
+          id="notes"
+          name="notes"
+          placeholder="Kirjoita tähän päivästäsi..."
+        ></textarea>
+      </br>  
+      <button type="submit" id="add_entry">Tallenna</button> 
+      </form>
+      
+      <script>
+      document.querySelector('.entryForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+      
+        const formData = {
+          user_id: document.getElementById('user_id').value,
+          entry_date: document.getElementById('entry_date').value,
+          anxiety_level: document.getElementById('anxiety_level').value,
+          notes: document.getElementById('notes').value,
+        };
+      
+        const response = await fetch('http://localhost:3000/api/entries', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+      
+        if (response.ok) {
+          alert('Entry added successfully!');
+        } else {
+          alert('Failed to add entry.');
+        }
+      });
+      </script>
+    
+    
+      
+        </form>
+      </br>
+       
+
+    </main>
+    <footer>
+      <p>© 2025 Ahdistuspäiväkirjat</p>
+    </footer>
     <script type="module" src="/src/js/index.js"></script>
   </body>
 </html>

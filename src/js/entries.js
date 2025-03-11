@@ -1,7 +1,6 @@
 import {fetchData} from './fetch';
 
 const getEntries = async () => {
-  console.log('Moikka, maailma');
   console.log('Haetaan paikallisesta tiedostosta');
 
   // haetaan alue joho luodaan kortit
@@ -36,10 +35,8 @@ const getEntries = async () => {
     const cardDiary = document.createElement('div');
     cardDiary.classList.add('card-diary');
     cardDiary.innerHTML = `
-      <p><strong>Date:</strong> ${entry.entry_date}</p>
-      <p><strong>Mood:</strong> ${entry.mood}</p>
-      <p><strong>Weight:</strong> ${entry.weight} kg</p>
-      <p><strong>Sleep:</strong> ${entry.sleep_hours} hours</p>
+      <p><strong>Päiväys:</strong> ${entry.entry_date}</p>
+      <p><strong>Ahdistus:</strong> ${entry.anxiety_level}</p>
       <p><strong>Notes:</strong> ${entry.notes}</p>
     `;
 
@@ -49,4 +46,4 @@ const getEntries = async () => {
   });
 };
 
-export {getEntries};
+export {getEntries, addEntry};

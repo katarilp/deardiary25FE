@@ -1,7 +1,7 @@
 const getData = async () => {
   try {
     // tehdään pyyntö HTTP GET
-    const response = await fetch('https://api.chucknorris.io/jokes/random');
+    const response = await fetch('http://localhost:3000/api/entries');
     console.log(response);
     // muunnetaan json muotoon
     const data = await response.json();

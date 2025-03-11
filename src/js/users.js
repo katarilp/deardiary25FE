@@ -9,18 +9,6 @@ closeButton.addEventListener('click', () => {
   dialog.close();
 });
 
-/////////////////////
-// Snackbar
-const snackbar = document.getElementById('snackbar');
-
-const showSnackbar = (message, type = '') => {
-  snackbar.innerText = message;
-  snackbar.className = `show ${type}`.trim(); // Add optional type class (e.g., 'error')
-
-  setTimeout(() => {
-    snackbar.className = snackbar.className.replace('show', '').trim();
-  }, 3000);
-};
 
 /////////////////////
 // getUsers

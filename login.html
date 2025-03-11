@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahdistaako?</title>
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Etusivu</a></li>
+        <li><a href="./about.html">Merkinnät</a></li>
+        <li><a href="./login.html">Kirjaudu</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h1>Ahdistuspäiväkirjat</h1>
+      <h2>Tervetuloa!</h2>
+      <h3>Rekisteröityminen</h3>
+
+      <p>
+        Oletko uusi käyttäjä? Voit rekisteröityä täyttämällä alla olevan lomakkeen ja painamalla 'Hyväksy'.
+      </p>
+
+      <form class="registerForm" action="http://localhost:5173/api/users" method="POST">
+        <label for="username">Nimimerkki</label>
+        <input
+          id="username"
+          type="text"
+          name="username"
+          placeholder="Uusi käyttäjä"
+        />
+      </br>
+        <label for="password">Salasana</label>
+        <input
+          id="password"
+          type="password"
+          name="password"
+          placeholder="salasana"
+        />
+      </br>
+        <label for="email">E-mail</label>
+        <input
+          id="email"
+          type="email"
+          name="email"
+          placeholder="newuser@example.com"
+        />
+      </br>
+        <button type="submit">Rekisteröidy</button>
+      </form>
+    </div>
+
+      <h3>Kirjautuminen</h3>
+      <p>Jos sinulla on jo tunnukset, voit kirjautua tästä.</p>
+      <div>
+        <form class="loginForm">
+          <label for="username">Nimimerkki</label>
+          <input 
+            type="text" 
+            name="username" 
+            placeholder="Nimimerkki" 
+            value="name" />
+          </br>
+          <label for="password">Salasana</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="salainen"
+            value="name"
+          />
+          </br>
+        <button type="submit">Kirjaudu</button>
+        </form>
+        <div id="loginResponse"></div>
+      </div>
+      </div>
+      </main>
+    <footer>
+      <p>© 2025 Ahdistuspäiväkirjat</p>
+    </footer>
+    </body>
+    
+  <script type="module" src="/src/js/auth.js"></script>
+</html>
