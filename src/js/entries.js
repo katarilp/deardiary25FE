@@ -1,4 +1,4 @@
-import {fetchData} from '../../vite-project/src/js/fetch';
+import {fetchData} from './fetch';
 
 const getEntries = async () => {
   console.log('Haetaan paikallisesta tiedostosta');
