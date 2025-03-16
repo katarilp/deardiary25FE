@@ -1,4 +1,4 @@
-import {fetchData} from './fetch';
+import {fetchData} from '../../vite-project/src/js/fetch';
 
 const getEntries = async () => {
   console.log('Haetaan paikallisesta tiedostosta');
@@ -14,9 +14,39 @@ const getEntries = async () => {
   if (response.error) {
     console.log('Tapahtui virhe fetch haussa!!');
     return;
-  }
+  };
 
   console.log(response);
+};
+
+const addEntry = async () => {  
+  // haetaan kaikki input kentät ja
+  // lähetetään ne fetchillä palvelimelle
+      document.querySelector('.entryForm').addEventListener('submit', async (event) => {
+        event.preventDefault();
+      
+        const formData = {
+          user_id: document.getElementById('user_id').value,
+          entry_date: document.getElementById('entry_date').value,
+          anxiety_level: document.getElementById('anxiety_level').value,
+          notes: document.getElementById('notes').value,
+        };
+      
+        const response = await fetch('http://localhost:3000/api/entries', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+      
+        if (response.ok) {
+          alert('Entry added successfully!');
+        } else {
+          alert('Failed to add entry.');
+        }
+      });
+
 
   // looppi jossa luodaan yksittäiset kortit
   diaryContainer.innerHTML = '';

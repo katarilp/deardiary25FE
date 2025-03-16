@@ -153,9 +153,7 @@ const addUser = async (event) => {
   getUsers();
 };
 
-// TODOO
-// Tee tänne funktio joka hakee yksittäiset käyttäjän tiedot
-// KÄytä tähän reittiä
+
 // GET http://localhost:3000/api/users/:id
 
 export {getUsers, addUser};

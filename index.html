@@ -54,32 +54,7 @@
       <button type="submit" id="add_entry">Tallenna</button> 
       </form>
       
-      <script>
-      document.querySelector('.entryForm').addEventListener('submit', async (event) => {
-        event.preventDefault();
-      
-        const formData = {
-          user_id: document.getElementById('user_id').value,
-          entry_date: document.getElementById('entry_date').value,
-          anxiety_level: document.getElementById('anxiety_level').value,
-          notes: document.getElementById('notes').value,
-        };
-      
-        const response = await fetch('http://localhost:3000/api/entries', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
-      
-        if (response.ok) {
-          alert('Entry added successfully!');
-        } else {
-          alert('Failed to add entry.');
-        }
-      });
-      </script>
+
     
     
       
@@ -92,5 +67,6 @@
       <p>© 2025 Ahdistuspäiväkirjat</p>
     </footer>
     <script type="module" src="/src/js/index.js"></script>
+    <script type="module" src="/src/js/entries.js"></script>
   </body>
 </html>
