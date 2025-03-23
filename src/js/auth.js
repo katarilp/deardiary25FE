@@ -1,7 +1,7 @@
 import '../css/style.css';
 import {fetchData} from './fetch.js';
 
-console.log('Moi luodaan nyt tokeneita ja kirjaudutaan sisään');
+console.log('luodaan tokeneita ja kirjaudutaan sisään');
 
 // Esimerkin takia haut ovat nyt suoraan tässä tiedostossa, jotta harjoitus ei sekoita
 // teidän omaa projektin rakennetta

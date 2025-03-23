@@ -9,31 +9,28 @@
   <body>
     <nav>
         <ul>
-          <li><a href="./index.html">Etusivu</a></li>
-          <li><a href="./about.html">Merkinnät</a></li>
-          <li><a href="./login.html">Kirjaudu</a></li>
+          <li><a href="submit.html">Uusi merkintä</a></li>
+          <li><a href="diary.html">Päiväkirjamerkinnät</a></li>
+          <li><a href="/index.html">Kirjaudu</a></li>
         </ul>
       </nav>
       <main>
         <h1>Päiväkirjamerkinnät</h1>
         <p>Tällä sivulla voit tarkastella aiempia merkintöjäsi. </p>
         <div id="entries">
-          <button class="get_entries">Hae päiväkirjamerkintäsi</button>
-          <script src="main.js"></script>
-
-          <section class="card-area">
-            <div class="card">
-       
-              <div class="card-img">
-                <img src="/img/diary.jpg" alt="Kuva päiväkirjasta." />
-              </div>
-                
-            </div>
-       
-          </section> 
+          <button class="get_entries" getEnriesBtn >Hae päiväkirjamerkintäsi</button>
+          <script type=module src="/src/js/entries.js"></script>
         </div> 
       </div>
-      <section class="card-area" id="diary"></section>
+      <section class="card-area" >
+        <div class="card">
+       
+          <div class="card-img">
+            <img src="/img/diary.jpg" alt="Kuva päiväkirjasta." />
+          </div>
+                
+        </div>
+      </section>
       <footer>
         <p>© 2025 Ahdistuspäiväkirjat</p>
       </footer>

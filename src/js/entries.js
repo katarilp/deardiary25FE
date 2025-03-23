@@ -1,79 +1,64 @@
-import {fetchData} from './fetch';
 
 const getEntries = async () => {
-  console.log('Haetaan paikallisesta tiedostosta');
-
   // haetaan alue joho luodaan kortit
-  const diaryContainer = document.getElementById('diary');
-  console.log(diaryContainer);
+  //const diaryEntries = document.getElementById('card-area');
+  //console.log(diaryEntries);
 
-  // haetaan data joko json tai fetch rajapinnasta
-  const url = '/diary.json';
-  const response = await fetchData(url);
-
-  if (response.error) {
-    console.log('Tapahtui virhe fetch haussa!!');
-    return;
+  // haetaan data fetch rajapinnasta
+  const url = 'http://localhost:3000/api/entries';
+  let options = {
+    method: 'GET',
+    headers: {
+    'Content-Type': 'key-value',
+    'authorization': 'Bearer ' + localStorage.getItem('token')}     
   };
-
+  let data = await fetch(url, options = {
+    method: 'GET',
+    headers: {
+    'Content-Type': 'key-value',
+    'authorization': 'Bearer ' + localStorage.getItem('token')}
+    });
+  console.log('Data:', data); 
+    
+  const response = await data.json(); 
   console.log(response);
-};
+ 
+// luodaan kortit ja lisätään ne alueelle
 
-const addEntry = async () => {  
-  // haetaan kaikki input kentät ja
-  // lähetetään ne fetchillä palvelimelle
-      document.querySelector('.entryForm').addEventListener('submit', async (event) => {
-        event.preventDefault();
-      
-        const formData = {
-          user_id: document.getElementById('user_id').value,
-          entry_date: document.getElementById('entry_date').value,
-          anxiety_level: document.getElementById('anxiety_level').value,
-          notes: document.getElementById('notes').value,
-        };
-      
-        const response = await fetch('http://localhost:3000/api/entries', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
-      
-        if (response.ok) {
-          alert('Entry added successfully!');
-        } else {
-          alert('Failed to add entry.');
-        }
-      });
+  const diaryContainer = document.querySelector('.card-area');
+  console.log('Löytyykö:', diaryContainer);
 
+ diaryContainer.innerHTML = ''; //tyhjennetään taulukko  
 
-  // looppi jossa luodaan yksittäiset kortit
-  diaryContainer.innerHTML = '';
-  response.forEach((entry) => {
-    const card = document.createElement('div');
-    card.classList.add('card');
-
-    const cardImg = document.createElement('div');
-    cardImg.classList.add('card-img');
-
-    const img = document.createElement('img');
-    img.src = '/img/diary.jpg';
-    img.alt = 'Diary Image';
-    cardImg.appendChild(img);
-
-    const cardDiary = document.createElement('div');
-    cardDiary.classList.add('card-diary');
-    cardDiary.innerHTML = `
+response.forEach((entry) => {
+  const card = document.createElement('div');
+  card.classList.add('card');
+  
+  const cardImg = document.createElement('div');
+  cardImg.classList.add('card-img');
+  
+  const img = document.createElement('img');
+  img.src = '/img/diary.jpg';    
+  img.alt = 'Diary Image';
+  cardImg.appendChild(img);
+  
+  const cardDiary = document.createElement('div');
+  cardDiary.classList.add('card-diary');
+  cardDiary.innerHTML = `
       <p><strong>Päiväys:</strong> ${entry.entry_date}</p>
       <p><strong>Ahdistus:</strong> ${entry.anxiety_level}</p>
-      <p><strong>Notes:</strong> ${entry.notes}</p>
-    `;
-
-    card.appendChild(cardImg);
-    card.appendChild(cardDiary);
-    diaryContainer.appendChild(card);
+      <p><strong>Muistiinpanot:</strong> ${entry.notes}</p>
+  `;
+  
+  card.appendChild(cardImg);
+  card.appendChild(cardDiary);
+  diaryContainer.appendChild(card);
   });
 };
 
-export {getEntries, addEntry};
+
+
+const getEntriesBtn = document.querySelector('.get_entries');
+getEntriesBtn.addEventListener('click', getEntries);
+
+export {getEntries, getEntriesBtn};

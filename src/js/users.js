@@ -2,12 +2,12 @@ import {fetchData} from './fetch';
 
 /////////////////////
 // Dialogi
-const dialog = document.querySelector('.info_dialog');
-const closeButton = document.querySelector('.info_dialog button');
+// const dialog = document.querySelector('.info_dialog');
+// const closeButton = document.querySelector('.info_dialog button');
 
-closeButton.addEventListener('click', () => {
-  dialog.close();
-});
+// closeButton.addEventListener('click', () => {
+//  dialog.close();
+// });
 
 
 /////////////////////

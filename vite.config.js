@@ -7,9 +7,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         // List your html files here, e.g:
-        main: resolve(__dirname, 'index.html'),
-        about: resolve(__dirname, 'about.html'),
-        apitest: resolve(__dirname, 'src/pages/apitest.html'),
+        Kirjautuminen: resolve(__dirname, 'index.html'),
+        Uusi_merkintä: resolve(__dirname, 'src/pages/submit.html'),
+        Historia: resolve(__dirname, 'src/pages/diary.html'),
       },
     },
   },

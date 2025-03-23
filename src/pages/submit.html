@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./src/css/style.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahdistuspäiväkirjat</title>
+  </head>
+  <body class="addsivu">
+    <main>
+      <nav>
+        <ul>
+          <li><a href="submit.html">Uusi merkintä</a></li>
+          <li><a href="diary.html">Päiväkirjamerkinnät</a></li>
+          <li><a href="/index.html">Kirjaudu</a></li>
+        </ul>
+      </nav> 
+      <h1>Ahdistuspäiväkirjat</h1>
+      <h2>Tervetuloa!</h2>
+      <p>
+        Tämä on Ahdistuspäiväkirjat-sovellus, joka on tehty osana
+        Metropolia-ammattikorkeakoulun opintoja. Alla voit testata ahdistuksesi kirjaamista päiväkirjaan.
+      </p>
+      <p> 
+        Päiväkirjamerkinnät-sivulla voit tarkastella aiempia merkintöjäsi.
+      </p>
+      <img src="/img/ahdistus.jpg" alt="Surullinen koira" id="koirakuva"/>
+     
+      <form class="entryForm">
+
+        <label for="date">Päiväys, jota merkintä koskee: </label>
+        <input
+          id="entry_date"
+          type="date"
+          name="date"
+          step="any"
+        />
+      </br>
+        <label for="score">Ahdistuksen määrä päivän aikana (0-10): </label>
+        <input
+          id="anxiety_level"
+          type="number" min="1" max="10"
+          name="score"
+          placeholder="0"
+        />
+      </br>
+        <label for="notes">Muistiinpanot</label>
+        <textarea
+          id="notes"
+          name="notes"
+          placeholder="Kirjoita tähän päivästäsi..."
+        ></textarea>
+      </br>  
+      <button type="submit" class="add_entry" addEntryBtn >Tallenna</button> 
+      </form>
+       
+
+    </main>
+    <footer>
+      <p>© 2025 Ahdistuspäiväkirjat</p>
+    </footer>
+    <script type="module" src="/src/js/index.js"></script>
+    <script type="module" src="/src/js/submit.js"></script>
+  </body>
+</html>
